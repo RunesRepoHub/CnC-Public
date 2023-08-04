@@ -9,7 +9,7 @@
 ## |            Github:             |
 ## |  https://github.com/rune004    |
 ## |--------------------------------|
-
+# Get update and packages needed 
 set -e
 
 DEB_PACKAGE_NAME="python2.7 python2-dev libssl-dev"
@@ -46,7 +46,7 @@ DEB_PACKAGE_NAME="python2.7 python2-dev libssl-dev"
     echo "OS NOT DETECTED, couldn't install package $PACKAGE"
     exit 1;
  fi
- 
+#-------------------------------------------------------------------------------------------------------------------------
 # Set Version 
 version="v0.0.1"
 export version="$version"
