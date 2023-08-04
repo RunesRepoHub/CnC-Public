@@ -66,6 +66,25 @@ then
     dialog --title "$scriptname - Version $version - $me" --clear \
            --backtitle "$scriptname - Version $version" \
            --prgbox "Git Clone CnC" "git clone https://$token@github.com/rune004/CnC.git" 30 60 ;
+
+    dialog --title "$scriptname - Version $version - $me" --clear \
+           --backtitle "$scriptname - Version $version" \
+           --yesno "Is this a freshly made VM or Docker, then click yes to install extra software like Starship." 20 60
+
+          case $? in
+
+            0)
+              echo "$username" >> ~/Documents/.username
+              echo "$password" >> ~/Documents/.password            
+              ;;
+
+            1)  
+              bash ./xxxxxxxx.sh;;
+
+            255)
+              echo "ESC pressed.";;
+
+          esac
 else 
     clear
     dialog --title "Login" --backtitle "$scriptname - Version $version" --infobox "Unsuccessful login" 10 60 ; sleep 5
