@@ -61,7 +61,7 @@ then
 
     dialog --title "$scriptname - Version $version - $me" --clear \
            --backtitle "$scriptname - Version $version" \
-           --prgbox "" "git clone https://$token@github.com/rune004/CnC.git"
+           --prgbox "Git Clone CnC" "git clone https://$token@github.com/rune004/CnC.git" 30 60 ;
 else 
     clear
     dialog --title "Login" --backtitle "$scriptname - Version $version" --infobox "Unsuccessful login" 10 60 ; sleep 5
