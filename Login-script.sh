@@ -37,14 +37,14 @@ userdb=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/l
 passdb=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/login-pass?pass=$password")
 #-------------------------------------------------------------------------------------------------------------------------
 # Pull down a fresh session ID
-sessionid=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/sessionid")
+sessionid=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/sessionid?user=$username&pass=$password")
 #-------------------------------------------------------------------------------------------------------------------------
 # Save session ID locally
 sudo rm ~/Documents/.sessionid
 echo "$sessionid" >> ~/Documents/.sessionid
 #-------------------------------------------------------------------------------------------------------------------------
 # Pull down the token for the downloader
-token=$(curl -s --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/token?sessionid=$sessionid")
+token=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/token?sessionid=$sessionid&user=$username&pass=$password")
 #-------------------------------------------------------------------------------------------------------------------------
 # Export token, user_and_pass and sessionid for later use
 export user_and_pass="$user_and_pass"
@@ -52,10 +52,16 @@ export token="$token"
 export sessionid="$sessionid"
 #-------------------------------------------------------------------------------------------------------------------------
 # Check the username and password are valid or not
-if (( $user == "$userdb" && $pass == "$passdb" && $sessionid == "$sessionid" ))
+if (( $username == "$userdb" && $password == "$passdb" && $sessionid == "$sessionid" ))
 then
     clear
-    dialog --title "Login" --backtitle "$scriptname - Version $version" --infobox "Successful login" 10 60 ; sleep 5
+    dialog --title "Login" --backtitle "$scriptname - Version $version"        --msgbox "Successful login" 10 60 ;
+    
+    cd ~
+
+    dialog --title "$scriptname - Version $version - $me" --clear \
+           --backtitle "$scriptname - Version $version" \
+           --prgbox "" "git clone https://$token@github.com/rune004/CnC.git"
 else 
     clear
     dialog --title "Login" --backtitle "$scriptname - Version $version" --infobox "Unsuccessful login" 10 60 ; sleep 5
