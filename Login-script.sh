@@ -52,7 +52,7 @@ export token="$token"
 export sessionid="$sessionid"
 #-------------------------------------------------------------------------------------------------------------------------
 # Check the username and password are valid or not
-if (( $username == "$userdb" && $password == "$passdb" && $sessionid == "$sessionid" ))
+if (( $username == "$userdb" && $password == "$passdb" ))
 then
     clear
     dialog --title "Login" --backtitle "$scriptname - Version $version"        --msgbox "Successful login" 10 60 ;
