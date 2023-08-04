@@ -47,6 +47,10 @@ echo "$sessionid" >> ~/Documents/.sessionid
 token=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/token?sessionid=$sessionid&user=$username&pass=$password")
 #-------------------------------------------------------------------------------------------------------------------------
 # Export token, user_and_pass and sessionid for later use
+export username="$username"
+export password="$password"
+export userdb="$userdb"
+export passdb="$passdb"
 export user_and_pass="$user_and_pass"
 export token="$token"
 export sessionid="$sessionid"
