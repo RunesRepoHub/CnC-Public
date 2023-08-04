@@ -12,8 +12,7 @@
 
 set -e
 
-YUM_PACKAGE_NAME="python python-devl python-pip openssl-devel"
-DEB_PACKAGE_NAME="python2.7 python-dev libssl-dev"
+DEB_PACKAGE_NAME="python2.7 python2-dev libssl-dev"
 
  if cat /etc/*release | grep ^NAME | grep Ubuntu; then
     echo "==============================================="
