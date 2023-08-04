@@ -118,7 +118,7 @@ then
 
     dialog --title "$scriptname - Version $version - $me" --clear \
            --backtitle "$scriptname - Version $version" \
-           --yesno "Is this a freshly made VM or Docker, then click yes to install extra software like Starship." 20 60
+           --yesno "Would you like to save your username and password locally for easier/quicker access?" 20 60
 
           case $? in
 
