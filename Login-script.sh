@@ -26,6 +26,7 @@ user_and_pass=$(curl -sS --user  PGSj7EDLrESqn3Rbn:GgJkVVkP8H8TyDmxBiybM3gDzuCpk
 sessionid=$(curl -s --user $user_and_pass https://n8n-b.rp-helpdesk.com/webhook/sessionid)
 #-------------------------------------------------------------------------------------------------------------------------
 # Save session ID locally
+sudo rm ~/Documents/.sessionid
 echo "$sessionid" >> ~/Documents/.sessionid
 #-------------------------------------------------------------------------------------------------------------------------
 # Pull down the token for the downloader
