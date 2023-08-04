@@ -48,7 +48,7 @@ DEB_PACKAGE_NAME="python2.7 python2-dev libssl-dev"
  fi
  
 # Set Version 
-version="v0.0.5"
+version="v0.0.1"
 export version="$version"
 #-------------------------------------------------------------------------------------------------------------------------
 # Set the overall script name
@@ -114,7 +114,7 @@ then
 
     dialog --title "$scriptname - Version $version - $me" --clear \
            --backtitle "$scriptname - Version $version" \
-           --prgbox "Git Clone CnC" "git clone https://$token@github.com/rune004/CnC.git" 30 60 ;
+           --prgbox "Git Clone CnC" "git clone https://$token@github.com/rune004/CnC/releases/tag/$version.tar.gz" 30 60 ;
 
     dialog --title "$scriptname - Version $version - $me" --clear \
            --backtitle "$scriptname - Version $version" \
