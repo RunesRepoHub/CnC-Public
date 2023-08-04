@@ -108,15 +108,15 @@ export sessionid="$sessionid"
 if (( $username == "$userdb" && $password == "$passdb" ))
 then
     clear
-    dialog --title "Login" --backtitle "$scriptname - Version $version"        --msgbox "Successful login" 10 60 ;
+    dialog --title "$me" --backtitle "$scriptname - Version $version"        --msgbox "Successful login" 10 60 ;
     
     cd ~
 
-    dialog --title "$scriptname - Version $version - $me" --clear \
+    dialog --title "$me" --clear \
            --backtitle "$scriptname - Version $version" \
            --prgbox "Git Clone CnC" "git clone https://$token@github.com/rune004/CnC/releases/tag/$version.tar.gz" 30 60 ;
 
-    dialog --title "$scriptname - Version $version - $me" --clear \
+    dialog --title "$me" --clear \
            --backtitle "$scriptname - Version $version" \
            --yesno "Would you like to save your username and password locally for easier/quicker access?" 20 60
 
