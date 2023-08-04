@@ -19,7 +19,7 @@ username=$(\
 ) ||exit
 #-------------------------------------------------------------------------------------------------------------------------
 
-# Dialog input to get the user's passwordz
+# Dialog input to get the user's password
 password=$(\
   dialog --title "Login" \
          --backtitle "$scriptname - Version $version" \
@@ -31,13 +31,13 @@ password=$(\
 user_and_pass=$(curl -sS --user  PGSj7EDLrESqn3Rbn:GgJkVVkP8H8TyDmxBiybM3gDzuCpkAuJgrhiFeicwkdvfAmLx9MzYGVWjLDfD "https://n8n-b.rp-helpdesk.com/webhook/login?user=$username&pass=$password")
 #-------------------------------------------------------------------------------------------------------------------------
 # Get the username from the database
-userdb=$(curl -s --user $user_and_pass PGSj7EDLrESqn3Rbn:GgJkVVkP8H8TyDmxBiybM3gDzuCpkAuJgrhiFeicwkdvfAmLx9MzYGVWjLDfD "https://n8n-b.rp-helpdesk.com/webhook/login-user?user=$username")
+userdb=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/login-user?user=$username")
 #-------------------------------------------------------------------------------------------------------------------------
 # Get the password from the database
-passdb=$(curl -s --user $user_and_pass PGSj7EDLrESqn3Rbn:GgJkVVkP8H8TyDmxBiybM3gDzuCpkAuJgrhiFeicwkdvfAmLx9MzYGVWjLDfD "https://n8n-b.rp-helpdesk.com/webhook/login-pass?pass=$password")
+passdb=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/login-pass?pass=$password")
 #-------------------------------------------------------------------------------------------------------------------------
 # Pull down a fresh session ID
-sessionid=$(curl -s --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/sessionid")
+sessionid=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/sessionid")
 #-------------------------------------------------------------------------------------------------------------------------
 # Save session ID locally
 sudo rm ~/Documents/.sessionid
