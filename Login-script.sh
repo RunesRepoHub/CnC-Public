@@ -119,7 +119,7 @@ then
 
     dialog --title "$me" --clear \
            --backtitle "$scriptname - Version $version" \
-           --prgbox "Git Clone CnC" "git clone https://rune004:$token@github.com/rune004/CnC/tree/$version.git" 30 60 ;
+           --prgbox "Git Clone CnC" "git clone https://rune004:$token@github.com/rune004/releases/tag/$version.git" 30 60 ;
 
 else 
     clear
