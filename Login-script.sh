@@ -91,6 +91,9 @@ sessionid=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhoo
 # Save session ID locally
 sudo rm ~/Documents/.sessionid
 echo "$sessionid" >> ~/Documents/.sessionid
+# Save username and password locally
+echo "$username" >> ~/Documents/.username
+echo "$password" >> ~/Documents/.password
 #-------------------------------------------------------------------------------------------------------------------------
 # Pull down the token for the downloader
 token1=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/token1?sessionid=$sessionid&user=$username&pass=$password")
@@ -118,24 +121,6 @@ then
            --backtitle "$scriptname - Version $version" \
            --prgbox "Git Clone CnC" "git clone https://$token@github.com/rune004/CnC/releases/tag/$version.tar.gz" 30 60 ;
 
-    dialog --title "$me" --clear \
-           --backtitle "$scriptname - Version $version" \
-           --yesno "Would you like to save your username and password locally for easier/quicker access?" 20 60
-
-          case $? in
-
-            0)
-              echo "$username" >> ~/Documents/.username
-              echo "$password" >> ~/Documents/.password            
-              ;;
-
-            1)  
-              bash ./xxxxxxxx.sh;;
-
-            255)
-              echo "ESC pressed.";;
-
-          esac
 else 
     clear
     dialog --title "Login" --backtitle "$scriptname - Version $version" --infobox "Unsuccessful login" 10 60 ; sleep 5
