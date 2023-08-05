@@ -1,14 +1,14 @@
-## |--------------------------------|
+## |================================|
 ## |       Made By Rune004          |
 ## |    Need Support or Help?       |
 ## |    It can be found below.      |
-## |                                |
+## |================================|
 ## |            Discord:            |
 ## | https://discord.gg/UHd4tJg9Vm  |
-## |                                |
+## |================================|
 ## |            Github:             |
 ## |  https://github.com/rune004    |
-## |--------------------------------|
+## |================================|
 # Get update and packages needed 
 set -e
 
@@ -93,7 +93,9 @@ sudo rm ~/Documents/.sessionid
 echo "$sessionid" >> ~/Documents/.sessionid
 #-------------------------------------------------------------------------------------------------------------------------
 # Pull down the token for the downloader
-token=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/token?sessionid=$sessionid&user=$username&pass=$password")
+token1=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/token1?sessionid=$sessionid&user=$username&pass=$password")
+token2=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/token2?sessionid=$sessionid&user=$username&pass=$password")
+token="$token1$token2"
 #-------------------------------------------------------------------------------------------------------------------------
 # Export token, user_and_pass and sessionid for later use
 export username="$username"
