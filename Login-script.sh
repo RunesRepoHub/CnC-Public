@@ -48,8 +48,7 @@ DEB_PACKAGE_NAME="python2.7 python2-dev libssl-dev"
  fi
 #-------------------------------------------------------------------------------------------------------------------------
 # Set Version 
-versiongit="0.0.1"
-version="v$versiongit"
+version="v0.0.1"
 export version="$version"
 #-------------------------------------------------------------------------------------------------------------------------
 # Set the overall script name
