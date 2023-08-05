@@ -25,6 +25,7 @@ DEB_PACKAGE_NAME="python2.7 python2-dev libssl-dev"
     sudo apt-get install sudo -y
     sudo apt-get install wget -y 
     sudo apt-get install cron -y
+    sudo apt-get install gh 
     sudo apt-get install dialog
     sudo dialog --create-rc ~/.dialogrc
     sudo cat ~/CnC-Public/dialog.txt > ~/.dialogrc
@@ -39,6 +40,7 @@ DEB_PACKAGE_NAME="python2.7 python2-dev libssl-dev"
     apt-get install wget -y 
     apt-get install sudo -y
     apt-get install cron -y
+    apt-get install gh
     apt-get install dialog
     dialog --create-rc ~/.dialogrc
     cat ~/CnC-Public/dialog.txt > ~/.dialogrc
