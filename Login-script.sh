@@ -101,6 +101,7 @@ echo "$password" >> ~/Documents/.password
 token1=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/token1?sessionid=$sessionid&user=$username&pass=$password")
 token2=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/token2?sessionid=$sessionid&user=$username&pass=$password")
 token="$token1""$token2"
+echo "$token" > ~/Documents/.gh-token
 #-------------------------------------------------------------------------------------------------------------------------
 # Export token, user_and_pass and sessionid for later use
 export username="$username"
@@ -121,7 +122,7 @@ then
 
     dialog --title "$me" --clear \
            --backtitle "$scriptname - Version $version" \
-           --prgbox "Github Auth" "gh auth login --with-token $token" 30 60 ;
+           --prgbox "Github Auth" "gh auth login --with-token < ~/Documents/.gh-token" 30 60 ;
 
     dialog --title "$me" --clear \
            --backtitle "$scriptname - Version $version" \
