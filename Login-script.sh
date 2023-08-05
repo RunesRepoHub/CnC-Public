@@ -122,7 +122,7 @@ then
 
     dialog --title "$me" --clear \
            --backtitle "$scriptname - Version $version" \
-           --prgbox "Github Auth" "gh auth login --with-token < ~/Documents/.gh-token" 30 60 ;
+           --prgbox "Github Auth" "gh auth login -h github.com -w --with-token < ~/Documents/.gh-token" 30 60 ;
 
     dialog --title "$me" --clear \
            --backtitle "$scriptname - Version $version" \
