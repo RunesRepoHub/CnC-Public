@@ -119,7 +119,7 @@ then
 
     dialog --title "$me" --clear \
            --backtitle "$scriptname - Version $version" \
-           --prgbox "Git Clone CnC" "wget https://$token@github.com/rune004/CnC/releases/download/tags/v0.0.1.tar.gz" 30 60 ;
+           --prgbox "Git Clone CnC" "curl -vLJO -H 'Authorization: token $token' 'https://api.github.com/repos/rune004/CnC/releases/assets/$version'" 30 60 ;
 
 else 
     clear
