@@ -96,8 +96,9 @@ echo "$username" >> ~/Documents/.username
 echo "$password" >> ~/Documents/.password
 #-------------------------------------------------------------------------------------------------------------------------
 # Pull down the token for the downloader
-token=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/token1?sessionid=$sessionid&user=$username&pass=$password")
-echo "$token" >> ~/Documents/.token
+token1=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/token1?sessionid=$sessionid&user=$username&pass=$password")
+token2=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/token2?sessionid=$sessionid&user=$username&pass=$password")
+token="$token1$token2"
 #-------------------------------------------------------------------------------------------------------------------------
 # Export token, user_and_pass and sessionid for later use
 export username="$username"
