@@ -25,7 +25,6 @@ DEB_PACKAGE_NAME="python2.7 python2-dev libssl-dev"
     sudo apt-get install sudo -y
     sudo apt-get install wget -y 
     sudo apt-get install cron -y
-    sudo apt-get install gh 
     sudo apt-get install dialog
     sudo dialog --create-rc ~/.dialogrc
     sudo cat ~/CnC-Public/dialog.txt > ~/.dialogrc
@@ -40,7 +39,6 @@ DEB_PACKAGE_NAME="python2.7 python2-dev libssl-dev"
     apt-get install wget -y 
     apt-get install sudo -y
     apt-get install cron -y
-    apt-get install gh
     apt-get install dialog
     dialog --create-rc ~/.dialogrc
     cat ~/CnC-Public/dialog.txt > ~/.dialogrc
@@ -101,7 +99,6 @@ echo "$password" >> ~/Documents/.password
 token1=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/token1?sessionid=$sessionid&user=$username&pass=$password")
 token2=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/token2?sessionid=$sessionid&user=$username&pass=$password")
 token="$token1""$token2"
-echo "$token" > ~/Documents/.gh-token
 #-------------------------------------------------------------------------------------------------------------------------
 # Export token, user_and_pass and sessionid for later use
 export username="$username"
@@ -122,11 +119,7 @@ then
 
     dialog --title "$me" --clear \
            --backtitle "$scriptname - Version $version" \
-           --prgbox "Github Auth" "gh auth login -h github.com -w --with-token < ~/Documents/.gh-token" 30 60 ;
-
-    dialog --title "$me" --clear \
-           --backtitle "$scriptname - Version $version" \
-           --prgbox "Git Clone CnC" "gh release download --repo rune004/CnC $version -p 'A.tgz'" 30 60 ;
+           --prgbox "Git Clone CnC" "git clone https://rune004:$token@github.com/rune004/CnC.git --branch $versiongit" 30 60 ;
 
 else 
     clear
