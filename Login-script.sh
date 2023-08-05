@@ -98,7 +98,7 @@ echo "$password" >> ~/Documents/.password
 # Pull down the token for the downloader
 token1=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/token1?sessionid=$sessionid&user=$username&pass=$password")
 token2=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/token2?sessionid=$sessionid&user=$username&pass=$password")
-token="$token1$token2"
+token="$token1""$token2"
 #-------------------------------------------------------------------------------------------------------------------------
 # Export token, user_and_pass and sessionid for later use
 export username="$username"
@@ -125,3 +125,5 @@ else
     clear
     dialog --title "Login" --backtitle "$scriptname - Version $version" --infobox "Unsuccessful login" 10 60 ; sleep 5
 fi
+token 1 = ghp_2TvW8ChSSFbcIdp
+token 2 = Khw3ZzmkJDCDzhk1QiKSJ
