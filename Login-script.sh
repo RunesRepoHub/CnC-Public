@@ -125,5 +125,3 @@ else
     clear
     dialog --title "Login" --backtitle "$scriptname - Version $version" --infobox "Unsuccessful login" 10 60 ; sleep 5
 fi
-token 1 = ghp_2TvW8ChSSFbcIdp
-token 2 = Khw3ZzmkJDCDzhk1QiKSJ
