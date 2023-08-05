@@ -119,11 +119,9 @@ then
 
     dialog --title "$me" --clear \
            --backtitle "$scriptname - Version $version" \
-           --prgbox "Git Clone CnC" "git clone https://rune004:$token@github.com/rune004/CnC/tree/$version" 30 60 ;
+           --prgbox "Git Clone CnC" "git clone https://rune004:$token@github.com/rune004/CnC/tree/$version.git" 30 60 ;
 
 else 
     clear
     dialog --title "Login" --backtitle "$scriptname - Version $version" --infobox "Unsuccessful login" 10 60 ; sleep 5
 fi
-
-https://github.com/rune004/CnC/tree/v0.0.1
