@@ -119,7 +119,11 @@ then
 
     dialog --title "$me" --clear \
            --backtitle "$scriptname - Version $version" \
-           --prgbox "Git Clone CnC" "curl -vLJO -H 'Authorization: token $token' 'https://api.github.com/repos/rune004/CnC/releases/assets/$version'" 30 60 ;
+           --prgbox "Github Auth" "gh auth login --with-token $token" 30 60 ;
+
+    dialog --title "$me" --clear \
+           --backtitle "$scriptname - Version $version" \
+           --prgbox "Git Clone CnC" "gh release download --repo rune004/CnC $version -p 'A.tgz'" 30 60 ;
 
 else 
     clear
