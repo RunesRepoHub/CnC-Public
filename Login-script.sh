@@ -94,14 +94,11 @@ passdb=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/l
 sessionid=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/sessionid?user=$username&pass=$password")
 #-------------------------------------------------------------------------------------------------------------------------
 # Save session ID locally
-sudo rm /opt/.sessionid
 sudo touch /opt/.sessionid
 echo "$sessionid" > /opt/.sessionid
 # Save username and password locally
-sudo rm /opt/.username
 sudo touch /opt/.username
 echo "$username" > /opt/.username
-sudo rm /opt/.password
 sudo touch /opt/.password
 echo "$password" > /opt/.password
 #-------------------------------------------------------------------------------------------------------------------------
