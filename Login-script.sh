@@ -119,8 +119,8 @@ then
     
     cd ~
     
-    if [ -d /CnC ]; then
-      sudo rm -r /CnC
+    if [ -d ~/CnC ]; then
+      sudo rm -r ~/CnC
     else
       dialog --title "$me" --clear \
              --backtitle "$scriptname - Version $version" \
