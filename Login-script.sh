@@ -53,18 +53,16 @@ version="v0.0.1"
 export version="$version"
 if [ ! -f ~/Documents/.version ]; then
 sudo rm ~/Documents/.version
-else
-echo "$version" > ~/Documents/.version
 fi
+echo "$version" > ~/Documents/.version
 #-------------------------------------------------------------------------------------------------------------------------
 # Set the overall script name
 scriptname="RPH CnC BASH Menu"
 export scriptname="$scriptname"
 if [ ! -f ~/Documents/.scriptname ]; then
 sudo rm ~/Documents/.scriptname
-else
-echo "$scriptname" > ~/Documents/.scriptname
 fi
+echo "$scriptname" > ~/Documents/.scriptname
 #-------------------------------------------------------------------------------------------------------------------------
 # Get the filename for display
 me="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
