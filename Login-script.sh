@@ -119,7 +119,7 @@ then
     
     cd ~
     
-    if [ ! -d /CnC ]; then
+    if [ -d /CnC ]; then
       sudo rm -r /CnC
     else
       dialog --title "$me" --clear \
