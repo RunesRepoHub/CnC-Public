@@ -128,7 +128,7 @@ then
       
       touch ~/run-CnC.sh
       echo "bash ~/CnC/CnC.sh" > ~/run-CnC.sh
-      sudo rm -r ~/CnC-Public > > /dev/null 2>&1
+      sudo rm -r ~/CnC-Public > /dev/null 2>&1
       bash ~/CnC/CnC.sh
     else
       dialog --title "$me" --clear \
