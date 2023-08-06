@@ -25,7 +25,3 @@ apt-get install sudo -y > /dev/null 2>&1
 apt-get install dialog > /dev/null 2>&1
 cd root > /dev/null 2>&1
 git clone https://github.com/rune004/CnC-Public.git > /dev/null 2>&1
-
-
-
-clear
