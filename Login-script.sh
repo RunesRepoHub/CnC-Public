@@ -125,12 +125,16 @@ then
              --backtitle "$scriptname - Version $version" \
              --prgbox "Git Clone CnC" "git clone https://rune004:$token@github.com/rune004/CnC.git" 30 60 ;
       
+      touch ~/run-CnC.sh
+      echo "bash ~/CnC/CnC.sh" > ~/run-CnC.sh
       bash ~/CnC/CnC.sh
     else
       dialog --title "$me" --clear \
              --backtitle "$scriptname - Version $version" \
              --prgbox "Git Clone CnC" "git clone https://rune004:$token@github.com/rune004/CnC.git" 30 60 ;
       
+      touch ~/run-CnC.sh
+      echo "bash ~/CnC/CnC.sh" > ~/run-CnC.sh
       bash ~/CnC/CnC.sh
     fi
 
