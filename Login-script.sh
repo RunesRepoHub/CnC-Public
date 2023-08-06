@@ -46,6 +46,7 @@ DEB_PACKAGE_NAME="python2.7 python2-dev libssl-dev"
     echo "OS NOT DETECTED, couldn't install package $PACKAGE"
     exit 1;
  fi
+ clear
 #-------------------------------------------------------------------------------------------------------------------------
 # Set Version 
 version="v0.0.1"
