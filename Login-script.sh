@@ -51,14 +51,14 @@ DEB_PACKAGE_NAME="python2.7 python2-dev libssl-dev"
 # Set Version 
 version="v0.0.1"
 export version="$version"
-touch ~/opt/.version
-echo "$version" > ~/opt/.version
+touch /opt/.version
+echo "$version" > /opt/.version
 #-------------------------------------------------------------------------------------------------------------------------
 # Set the overall script name
 scriptname="RPH CnC BASH Menu"
 export scriptname="$scriptname"
-touch ~/opt/.scriptname
-echo "$scriptname" > ~/opt/.scriptname
+touch /opt/.scriptname
+echo "$scriptname" > /opt/.scriptname
 #-------------------------------------------------------------------------------------------------------------------------
 # Get the filename for display
 me="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
@@ -94,16 +94,16 @@ passdb=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/l
 sessionid=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/sessionid?user=$username&pass=$password")
 #-------------------------------------------------------------------------------------------------------------------------
 # Save session ID locally
-sudo rm ~/opt/.sessionid
-sudo touch ~/opt/.sessionid
-echo "$sessionid" > ~/opt/.sessionid
+sudo rm /opt/.sessionid
+sudo touch /opt/.sessionid
+echo "$sessionid" > /opt/.sessionid
 # Save username and password locally
-sudo rm ~/opt/.username
-sudo touch ~/opt/.username
-echo "$username" > ~/opt/.username
-sudo rm ~/opt/.password
-sudo touch ~/opt/.password
-echo "$password" > ~/opt/.password
+sudo rm /opt/.username
+sudo touch /opt/.username
+echo "$username" > /opt/.username
+sudo rm /opt/.password
+sudo touch /opt/.password
+echo "$password" > /opt/.password
 #-------------------------------------------------------------------------------------------------------------------------
 # Pull down the token for the downloader
 token1=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/token1?sessionid=$sessionid&user=$username&pass=$password")
