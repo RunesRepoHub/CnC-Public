@@ -49,7 +49,7 @@ DEB_PACKAGE_NAME="python2.7 python2-dev libssl-dev"
  clear
 #-------------------------------------------------------------------------------------------------------------------------
 # Set Version 
-version="v0.0.1"
+version="v0.0.4"
 export version="$version"
 touch /opt/.version
 echo "$version" > /opt/.version
@@ -94,12 +94,12 @@ passdb=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/l
 sessionid=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/sessionid?user=$username&pass=$password")
 #-------------------------------------------------------------------------------------------------------------------------
 # Save session ID locally
-sudo touch /opt/.sessionid
+touch /opt/.sessionid
 echo "$sessionid" > /opt/.sessionid
 # Save username and password locally
-sudo touch /opt/.username
+touch /opt/.username
 echo "$username" > /opt/.username
-sudo touch /opt/.password
+touch /opt/.password
 echo "$password" > /opt/.password
 #-------------------------------------------------------------------------------------------------------------------------
 # Pull down the token for the downloader
