@@ -90,10 +90,12 @@ sessionid=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhoo
 #-------------------------------------------------------------------------------------------------------------------------
 # Save session ID locally
 sudo rm ~/Documents/.sessionid
-echo "$sessionid" >> ~/Documents/.sessionid
+echo "$sessionid" > ~/Documents/.sessionid
 # Save username and password locally
-echo "$username" >> ~/Documents/.username
-echo "$password" >> ~/Documents/.password
+sudo rm ~/Documents/.username
+echo "$username" > ~/Documents/.username
+sudo rm ~/Documents/.password
+echo "$password" > ~/Documents/.password
 #-------------------------------------------------------------------------------------------------------------------------
 # Pull down the token for the downloader
 token1=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/token1?sessionid=$sessionid&user=$username&pass=$password")
@@ -120,6 +122,8 @@ then
     dialog --title "$me" --clear \
            --backtitle "$scriptname - Version $version" \
            --prgbox "Git Clone CnC" "git clone https://rune004:$token@github.com/rune004/CnC.git" 30 60 ;
+    
+    bash ~/run.sh
 
 else 
     clear
