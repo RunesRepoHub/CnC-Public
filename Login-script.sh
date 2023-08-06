@@ -118,12 +118,19 @@ then
     dialog --title "$me" --backtitle "$scriptname - Version $version"        --msgbox "Successful login" 10 60 ;
     
     cd ~
-
-    dialog --title "$me" --clear \
-           --backtitle "$scriptname - Version $version" \
-           --prgbox "Git Clone CnC" "git clone https://rune004:$token@github.com/rune004/CnC.git" 30 60 ;
     
-    bash ~/CnC/CnC.sh
+    FILE=$1     
+    if [ -f $FILE ]; then
+      sudo rm -r ~/CnC
+    else
+      dialog --title "$me" --clear \
+             --backtitle "$scriptname - Version $version" \
+             --prgbox "Git Clone CnC" "git clone https://rune004:$token@github.com/rune004/CnC.git" 30 60 ;
+      
+      bash ~/CnC/CnC.sh
+    fi
+
+    
 
 else 
     clear
