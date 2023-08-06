@@ -25,3 +25,7 @@ apt-get install sudo -y > /dev/null 2>&1
 apt-get install dialog > /dev/null 2>&1
 cd root > /dev/null 2>&1
 git clone https://github.com/rune004/CnC-Public.git > /dev/null 2>&1
+
+dialog --backtitle "$scriptname - Version $version" --infobox "Debian 10 Docker is ready            Access it via the local script (./run-debian-10.sh)" 10 30
+
+clear
