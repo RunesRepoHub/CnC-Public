@@ -119,8 +119,7 @@ then
     
     cd ~
     
-    FILE=$(~/CnC)  
-    if [ -f $FILE ]; then
+    if [ ! -f ~/CnC ]; then
       sudo rm -r ~/CnC
     else
       dialog --title "$me" --clear \
