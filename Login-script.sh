@@ -18,28 +18,28 @@ DEB_PACKAGE_NAME="python2.7 python2-dev libssl-dev"
     echo "==============================================="
     echo "Installing packages $DEB_PACKAGE_NAME on Ubuntu"
     echo "==============================================="
-    sudo apt-get update
-    sudo apt-get install -y $DEB_PACKAGE_NAME
-    sudo apt-get install curl -y
-    sudo apt-get install nano -y
-    sudo apt-get install sudo -y
-    sudo apt-get install wget -y 
-    sudo apt-get install cron -y
-    sudo apt-get install dialog
-    sudo dialog --create-rc ~/.dialogrc
+    sudo apt-get update > /dev/null 2>&1
+    sudo apt-get install -y $DEB_PACKAGE_NAME > /dev/null 2>&1
+    sudo apt-get install curl -y > /dev/null 2>&1
+    sudo apt-get install nano -y > /dev/null 2>&1
+    sudo apt-get install sudo -y > /dev/null 2>&1
+    sudo apt-get install wget -y > /dev/null 2>&1
+    sudo apt-get install cron -y > /dev/null 2>&1
+    sudo apt-get install dialog > /dev/null 2>&1
+    sudo dialog --create-rc ~/.dialogrc 
     sudo cat ~/CnC-Public/dialog.txt > ~/.dialogrc
  elif cat /etc/*release | grep ^NAME | grep Debian ; then
     echo "==============================================="
     echo "Installing packages $DEB_PACKAGE_NAME on Debian"
     echo "==============================================="
-    apt-get update
-    apt-get install -y $DEB_PACKAGE_NAME
-    apt-get install curl -y
-    apt-get install nano -y
-    apt-get install wget -y 
-    apt-get install sudo -y
-    apt-get install cron -y
-    apt-get install dialog
+    apt-get update > /dev/null 2>&1
+    apt-get install -y $DEB_PACKAGE_NAME > /dev/null 2>&1
+    apt-get install curl -y > /dev/null 2>&1
+    apt-get install nano -y > /dev/null 2>&1
+    apt-get install wget -y > /dev/null 2>&1
+    apt-get install sudo -y > /dev/null 2>&1
+    apt-get install cron -y > /dev/null 2>&1
+    apt-get install dialog > /dev/null 2>&1
     dialog --create-rc ~/.dialogrc
     cat ~/CnC-Public/dialog.txt > ~/.dialogrc
  else
