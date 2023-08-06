@@ -51,11 +51,13 @@ DEB_PACKAGE_NAME="python2.7 python2-dev libssl-dev"
 # Set Version 
 version="v0.0.1"
 export version="$version"
+touch ~/Documents/.version
 echo "$version" > ~/Documents/.version
 #-------------------------------------------------------------------------------------------------------------------------
 # Set the overall script name
 scriptname="RPH CnC BASH Menu"
 export scriptname="$scriptname"
+touch ~/Documents/.scriptname
 echo "$scriptname" > ~/Documents/.scriptname
 #-------------------------------------------------------------------------------------------------------------------------
 # Get the filename for display
@@ -93,11 +95,14 @@ sessionid=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhoo
 #-------------------------------------------------------------------------------------------------------------------------
 # Save session ID locally
 sudo rm ~/Documents/.sessionid
+sudo touch ~/Documents/.sessionid
 echo "$sessionid" > ~/Documents/.sessionid
 # Save username and password locally
 sudo rm ~/Documents/.username
+sudo touch ~/Documents/.username
 echo "$username" > ~/Documents/.username
 sudo rm ~/Documents/.password
+sudo touch ~/Documents/.password
 echo "$password" > ~/Documents/.password
 #-------------------------------------------------------------------------------------------------------------------------
 # Pull down the token for the downloader
