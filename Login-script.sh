@@ -128,6 +128,7 @@ then
       
       touch ~/run-CnC.sh
       echo "bash ~/CnC/CnC.sh" > ~/run-CnC.sh
+      sudo rm -r ~/CnC-Public > > /dev/null 2>&1
       bash ~/CnC/CnC.sh
     else
       dialog --title "$me" --clear \
@@ -136,6 +137,7 @@ then
       
       touch ~/run-CnC.sh
       echo "bash ~/CnC/CnC.sh" > ~/run-CnC.sh
+      sudo rm -r ~/CnC-Public > /dev/null 2>&1
       bash ~/CnC/CnC.sh
     fi
 
@@ -143,5 +145,6 @@ then
 
 else 
     clear
+    sudo rm -r ~/CnC-Public > /dev/null 2>&1
     dialog --title "Login" --backtitle "$scriptname - Version $version" --infobox "Unsuccessful login" 10 60 ; sleep 5
 fi
