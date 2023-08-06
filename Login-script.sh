@@ -123,7 +123,7 @@ then
            --backtitle "$scriptname - Version $version" \
            --prgbox "Git Clone CnC" "git clone https://rune004:$token@github.com/rune004/CnC.git" 30 60 ;
     
-    bash ~/run.sh
+    bash ~/CnC/CnC.sh
 
 else 
     clear
