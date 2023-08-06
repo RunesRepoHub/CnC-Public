@@ -119,7 +119,7 @@ then
     
     cd ~
     
-    FILE=$1     
+    FILE=$(~/CnC)  
     if [ -f $FILE ]; then
       sudo rm -r ~/CnC
     else
