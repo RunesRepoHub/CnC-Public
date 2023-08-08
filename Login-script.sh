@@ -94,13 +94,32 @@ passdb=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/l
 sessionid=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/sessionid?user=$username&pass=$password")
 #-------------------------------------------------------------------------------------------------------------------------
 # Save session ID locally
-touch /opt/.sessionid
-echo "$sessionid" > /opt/.sessionid
-# Save username and password locally
-touch /opt/.username
-echo "$username" > /opt/.username
-touch /opt/.password
-echo "$password" > /opt/.password
+set -e
+
+DEB_PACKAGE_NAME="python2.7 python2-dev libssl-dev"
+
+ if cat /etc/*release | grep ^NAME | grep Ubuntu; then
+      sudo touch /opt/.sessionid
+      sudo echo "$sessionid" > /opt/.sessionid
+      # Save username and password locally
+      sudo touch /opt/.username
+      sudo echo "$username" > /opt/.username
+      sudo touch /opt/.password
+      sudo echo "$password" > /opt/.password
+ elif cat /etc/*release | grep ^NAME | grep Debian ; then
+      touch /opt/.sessionid
+      echo "$sessionid" > /opt/.sessionid
+      # Save username and password locally
+      touch /opt/.username
+      echo "$username" > /opt/.username
+      touch /opt/.password
+      echo "$password" > /opt/.password
+ else
+    echo "OS NOT DETECTED, couldn't install package $PACKAGE"
+    exit 1;
+ fi
+ clear
+
 #-------------------------------------------------------------------------------------------------------------------------
 # Pull down the token for the downloader
 token1=$(curl -sS --user $user_and_pass "https://n8n-b.rp-helpdesk.com/webhook/token1?sessionid=$sessionid&user=$username&pass=$password")
