@@ -56,8 +56,8 @@ set -e
 DEB_PACKAGE_NAME="python2.7 python2-dev libssl-dev"
 
  if cat /etc/*release | grep ^NAME | grep Ubuntu; then
-      sudo touch /opt/.version
-      sudo echo "$version" > /opt/.version 
+      sudo touch ~/Documents/.version
+      sudo echo "$version" > ~/Documents//.version 
  elif cat /etc/*release | grep ^NAME | grep Debian ; then
       touch /opt/.version
       echo "$version" > /opt/.version
@@ -78,8 +78,8 @@ set -e
 DEB_PACKAGE_NAME="python2.7 python2-dev libssl-dev"
 
  if cat /etc/*release | grep ^NAME | grep Ubuntu; then
-      sudo touch /opt/.scriptname
-      sudo echo "$scriptname" > /opt/.scriptname
+      sudo touch ~/Documents/.scriptname
+      sudo echo "$scriptname" > ~/Documents/.scriptname
  elif cat /etc/*release | grep ^NAME | grep Debian ; then
       touch /opt/.scriptname
       echo "$scriptname" > /opt/.scriptname
@@ -129,12 +129,12 @@ DEB_PACKAGE_NAME="python2.7 python2-dev libssl-dev"
 
  if cat /etc/*release | grep ^NAME | grep Ubuntu; then
       sudo touch /opt/.sessionid
-      sudo echo "$sessionid" > /opt/.sessionid
+      sudo echo "$sessionid" > ~/Documents/.sessionid
       # Save username and password locally
       sudo touch /opt/.username
-      sudo echo "$username" > /opt/.username
+      sudo echo "$username" > ~/Documents/.username
       sudo touch /opt/.password
-      sudo echo "$password" > /opt/.password
+      sudo echo "$password" > ~/Documents/.password
  elif cat /etc/*release | grep ^NAME | grep Debian ; then
       touch /opt/.sessionid
       echo "$sessionid" > /opt/.sessionid
