@@ -51,14 +51,43 @@ DEB_PACKAGE_NAME="python2.7 python2-dev libssl-dev"
 # Set Version 
 version="v0.0.4"
 export version="$version"
-touch /opt/.version
-echo "$version" > /opt/.version
+set -e
+
+DEB_PACKAGE_NAME="python2.7 python2-dev libssl-dev"
+
+ if cat /etc/*release | grep ^NAME | grep Ubuntu; then
+      sudo touch /opt/.version
+      sudo echo "$version" > /opt/.version 
+ elif cat /etc/*release | grep ^NAME | grep Debian ; then
+      touch /opt/.version
+      echo "$version" > /opt/.version
+ else
+    echo "OS NOT DETECTED, couldn't install package $PACKAGE"
+    exit 1;
+ fi
+ clear
+
 #-------------------------------------------------------------------------------------------------------------------------
 # Set the overall script name
 scriptname="RPH CnC BASH Menu"
 export scriptname="$scriptname"
-touch /opt/.scriptname
-echo "$scriptname" > /opt/.scriptname
+
+
+set -e
+
+DEB_PACKAGE_NAME="python2.7 python2-dev libssl-dev"
+
+ if cat /etc/*release | grep ^NAME | grep Ubuntu; then
+      sudo touch /opt/.scriptname
+      sudo echo "$scriptname" > /opt/.scriptname
+ elif cat /etc/*release | grep ^NAME | grep Debian ; then
+      touch /opt/.scriptname
+      echo "$scriptname" > /opt/.scriptname
+ else
+    echo "OS NOT DETECTED, couldn't install package $PACKAGE"
+    exit 1;
+ fi
+ clear
 #-------------------------------------------------------------------------------------------------------------------------
 # Get the filename for display
 me="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
